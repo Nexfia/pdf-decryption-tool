@@ -1,4 +1,4 @@
-### 说明
+ **### 说明** 
 
 只能解除PDF文件的所有者权限的密码，用户密码解不了。
 
@@ -8,13 +8,13 @@
 
 
 
-### 原理
+ **### 原理** 
 
 设置了所有者权限的PDF文件的内容实质上并未加密，使用 **pikepdf**  读取置了所有者权限的PDF文件，并将读取的内容保存为新的PDF文件即可解除加密，可以愉快的编辑和复制文档内容了。
 
 
 
-### 警告
+ **### 警告** 
 
 解密PDF文档前请确定你有权编辑及移除这个文件的密码。
 
@@ -22,7 +22,7 @@
 
 
 
-### 准备工作
+ **### 准备工作** 
 
 pip3安装命令
 
@@ -38,7 +38,7 @@ pip3 install pikepdf
 
 
 
-### 程序运行
+ **### 程序运行** 
 
 Windows
 
@@ -54,7 +54,7 @@ python3 PDFDecryptionTool.py
 
 
 
-### 程序说明
+ **### 程序说明** 
 
 GUI框架：Tkinter
 
@@ -85,7 +85,7 @@ PDF读写模块：pikepdf
 
 
 
-### 写在最后
+ **### 写在最后** 
 
 Q：为什么不打包好一个deb或者exe？
 
@@ -99,9 +99,9 @@ A：
 
 谁有法子的可以交流下。
 
-![image-20210421234842285](/home/nexfia/.config/Typora/typora-user-images/image-20210421234842285.png)
+![输入图片说明](https://images.gitee.com/uploads/images/2021/0422/110713_7b0864ef_7352405.png "image-20210421234842285.png")
 
-![image-20210422001606402](/home/nexfia/.config/Typora/typora-user-images/image-20210422001606402.png)
+![输入图片说明](https://images.gitee.com/uploads/images/2021/0422/110726_bfb43e9a_7352405.png "image-20210422001606402.png")
 
 Q：为什么文件选择器这么丑？而且这么难用？
 
