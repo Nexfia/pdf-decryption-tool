@@ -84,8 +84,10 @@ def jiemi():
 if __name__ == "__main__":
     root = Tk()
     root.title("PDF解密工具")
+    
     inputPath = StringVar()
     outputPath = StringVar()
+    
     isPDFFile = IntVar()
     
     #告诉操作系统使用程序自身的dpi适配
