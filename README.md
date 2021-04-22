@@ -6,6 +6,7 @@
 
 那种打开就要密码的解不了，除非暴力破解。
 
+PDFDecryptionToolWin.py 为Windows版本，针对Windows优化了下UI
 
 
 ### 原理
