@@ -2,15 +2,16 @@ from tkinter import *
 from tkinter.filedialog import *
 import threading
 import pikepdf
+from pikepdf import _cpphelpers
 import os
- 
+
 def __selectInputPath():
     if isPDFFile.get()==0:
         inputPath=askdirectory(parent=root, mustexist=True)
         inputEntry.delete(0, END)
         inputEntry.insert(0, inputPath)
     elif isPDFFile.get()==1:
-        inputPath=askopenfilename(title="Select PDF file", filetypes=(("pdf files", "*.pdf"),("PDF files", "*.PDF")))
+        inputPath=askopenfilename(title="Select PDF file", filetypes=(("pdf files", "*.pdf"),("PDF files", "*.PDF")), parent=root)
         inputEntry.delete(0, END)
         inputEntry.insert(0, inputPath)
 
@@ -60,8 +61,6 @@ def __jiemi():
                     num_pages = len(pdf.pages)
                     del pdf.pages[-1]
                     fileName=os.path.basename(inFile)
-                    print(fileName)
-                    print(type(fileName))
                     pdf.save(outFile + "/"+ fileName)
                     updateStatusLable("已完成")
     elif inFile=='' and outFile!='':
