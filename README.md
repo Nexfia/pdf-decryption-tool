@@ -1,4 +1,28 @@
-###  说明
+### 0.3版本更新说明
+
+1.完善了程序逻辑。
+
+2.增加了异常处理。
+
+3.使用主题进行美化。
+
+4.增加了“关于”页面
+
+
+
+### 安装说明
+
+安装前请务必使用命令
+
+```bash
+sudo dpkg --purge nexfia.PDFDecryptionTool
+```
+
+将旧版本先自行删除
+
+
+
+### 功能说明
 
 只能解除PDF文件的所有者权限的密码，用户密码解不了。
 
@@ -6,7 +30,6 @@
 
 那种打开就要密码的解不了，除非暴力破解。
 
-PDFDecryptionToolWin.py 为Windows版本，针对Windows优化了下UI
 
 
 ### 原理
@@ -61,46 +84,61 @@ GUI框架：Tkinter
 
 PDF读写模块：pikepdf 
 
-程序主要逻辑：
+使用主题：ttkthemes 
 
-判断单文件复选框setOnePDFFile是否被勾选
-
---isPDFFile.get()的值为0表示没有没有被勾选
-
-----选择目标文件夹，既要修改的PDF文档所在的文件夹
-
-----点击“解密”按钮，程序会读取目标文件夹的文件列表，选择pdf文件进行解密，并保存到选择的输出路径。
-
-----解密过程中会不断更新  **statusLable**  标签的内容说明解密到第几个文件。
-
---isPDFFile.get()的值为1表示没有被勾选
-
-----选择目标文件，既要修改的PDF文档
-
-----点击“解密”按钮，程序会读取目标文件进行解密，并保存到选择的输出路径。
-
---默认是0不勾选
+https://github.com/TkinterEP/ttkthemes/tree/master/ttkthemes
 
 
 
+### 题外话
+
+本程序将不再更新，因为使用tkinter写GUI实在太操蛋了
+
+可能会用pyqt5进行重写，或者直接做一个pdf工具箱。
+
+因为好像没有再deepin见到好用的pdf处理软件。
+
+有知道好用的可以推荐下。
 
 
 
 ### 写在最后
 
-Q：为什么文件选择器这么丑？而且这么难用？
+#### Q：0.2版本哪去了？
 
-A：
+A：在你心里。
 
-Linux中Tkinter不知道调用的是哪个文件选择器，我本来想尝试通过调用深度文件管理器的文件选择器来获取路径的。可是查了半天找不到法子，我也很无奈。我太菜了QAQ
+#### Q：使用pyinstaller打包时需要注意什么？
 
-Windows的使用了ttk，界面是系统风格还可以啦。
+A：需要注意直接使用
 
-Q：为什么程序容易出问题？
+```bash
+pyinstaller -Dw PDFDecryptionTool.py 
+```
 
-A：没写异常处理。。。
+进行打包是不会将**/src/images**内的图片资源文件打包进去的。
 
-Q：我尝试用pyinstaller打包为什么文件这么大？
+#### 解决方法一：
+
+你使用打包命令打包一次生成了**PDFDecryptionTool.spec**文件后，在**PDFDecryptionTool.spec**文件中的data参数里加上('images','images')
+
+![image-20210430210208796](/home/nexfia/.config/Typora/typora-user-images/image-20210430210208796.png)
+
+保存，运行命令
+
+```bash
+pyinstaller PDFDecryptionTool.spec
+```
+
+即可。
+
+#### 解决方法二：
+
+将**/src/images**文件夹直接复制到**/src/dist/PDFDecryptionTool**中。
+
+
+
+#### Q：我尝试用pyinstaller打包为什么文件这么大？
 
 A：
 
@@ -114,7 +152,7 @@ Pipenv安装与使用可以看这篇文章：https://www.return520.com/posts/186
 pip3 install pipenv
 ```
 
-使用pipenv创建一个虚拟环境（3.7是我Python版本，你可以换成你自己的）
+使用pipenv创建一个虚拟环境（3.7是我Python版本，你可以换成你自己的，注意python和版本号3.7之间有一个空格）
 
 ```shell
 pipenv --python 3.7

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Comment=PDF解密工具
+Exec="/opt/apps/nexfia.PDFDecryptionTool/PDFDecryptionTool"
+Icon=/opt/apps/nexfia.PDFDecryptionTool/images/logo/icon.svg
+Name=PDF解密工具
+Terminal=false
+Type=Application
+X-Deepin-Vendor=user-custom

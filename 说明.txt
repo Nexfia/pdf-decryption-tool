@@ -1,0 +1,10 @@
+目前已经打包好为deb了
+
+后续升级只需要
+1.修改/deb-sm/DEBIAN/control文件中的版本号
+2.将/deb-sm/opt/apps/nexfia.PDFDecryptionTool中的内容替换掉就好了
+
+打包流程：
+终端中进入“PDFDecryptionTool”文件夹
+输入打包命令
+打包命令：dpkg -b deb-sm PDFDecryptionTool.deb
