@@ -122,7 +122,7 @@ pyinstaller -Dw PDFDecryptionTool.py
 
 你使用打包命令打包一次生成了**PDFDecryptionTool.spec**文件后，在**PDFDecryptionTool.spec**文件中的data参数里加上('images','images')
 
-![image-20210430210208796](/home/nexfia/.config/Typora/typora-user-images/image-20210430210208796.png)
+![image-20210430210208796](./docImage/data参数.png)
 
 保存，运行命令
 
