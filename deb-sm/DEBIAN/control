@@ -1,5 +1,5 @@
 Package: nexfia.PDFDecryptionTool
-Version: 0.3
+Version: 0.4
 Priority: optional
 Description: 用于解除PDF文件的所有者密码。
 Architecture: amd64

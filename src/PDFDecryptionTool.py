@@ -87,9 +87,11 @@ def __jiemi():
                     messagebox.showinfo(message='提示', detail='目标路径为空文件夹\n请重新选择路径')
             except Exception as e:
                 messagebox.showerror(message='错误', detail=e)    
-        elif isPDFFile.get()==1 and os.path.exists(inFile)==True and (overwriteFlag==True or inFile!=parentinFile): #判断是否为单个pdf，1表明是
+        elif isPDFFile.get()==1 and os.path.exists(inFile)==True and (overwriteFlag==True or outFile!=parentinFile): #判断是否为单个pdf，1表明是
             try:    
-                
+                print("inFile"+inFile)
+                print("parentinFile"+parentinFile)
+                print("overwriteFlag"+overwriteFlag)
                 with pikepdf.open(inFile,allow_overwriting_input=overwriteFlag) as pdf:
                         num_pages = len(pdf.pages)
                         del pdf.pages[-1]
